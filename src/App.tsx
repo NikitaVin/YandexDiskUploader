@@ -1,22 +1,14 @@
-import { MainPage } from './pages/mainPage/MainPage';
-import { NotFound } from './pages/notFound';
-import { Routes, Route } from 'react-router-dom';
-import './scss/app.scss';
-import { Cart } from './pages/cart';
-import { FullTown } from './pages/FullTown';
-import { MainLayout } from './layouts/MainLayout';
-import { FC } from 'react';
+import React, { FC } from 'react';
+import { DivApp } from './App.styles';
+import { GlobalStyles } from './styles/global.styles';
+import { FilesUpload } from './components/FilesUpload';
 
 const App: FC = () => {
   return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route path="" element={<MainPage />} />
-        <Route path="town/:id" element={<FullTown />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+    <DivApp>
+      <GlobalStyles />
+      <FilesUpload />
+    </DivApp>
   );
 };
 
